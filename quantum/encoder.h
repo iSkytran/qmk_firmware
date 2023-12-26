@@ -17,9 +17,7 @@
 
 #pragma once
 
-#include <stdint.h>
-#include <stdbool.h>
-#include "gpio.h"
+#include "quantum.h"
 #include "util.h"
 
 void encoder_init(void);
@@ -27,6 +25,7 @@ bool encoder_read(void);
 
 bool encoder_update_kb(uint8_t index, bool clockwise);
 bool encoder_update_user(uint8_t index, bool clockwise);
+void encoder_inerrupt_read(uint8_t index);
 
 #ifdef SPLIT_KEYBOARD
 
@@ -59,8 +58,7 @@ void encoder_update_raw(uint8_t* slave_state);
 #define NUM_ENCODERS_MAX_PER_SIDE MAX(NUM_ENCODERS_LEFT, NUM_ENCODERS_RIGHT)
 
 #ifdef ENCODER_MAP_ENABLE
-#    define NUM_DIRECTIONS 2
 #    define ENCODER_CCW_CW(ccw, cw) \
         { (cw), (ccw) }
-extern const uint16_t encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS];
+extern const uint16_t encoder_map[][NUM_ENCODERS][2];
 #endif // ENCODER_MAP_ENABLE
