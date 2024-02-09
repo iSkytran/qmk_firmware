@@ -72,14 +72,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  BAT_LVL,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
      KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
 };
-
-// ************* //
-// Key Overrides //
-// ************* //
-const key_override_t shift_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_ESC, KC_GRV);
-const key_override_t gui_key_override = ko_make_basic(MOD_MASK_GUI, KC_ESC, KC_GRV);
-const key_override_t **key_overrides = (const key_override_t *[]){
-     &shift_key_override,
-     &gui_key_override,
-     NULL
-};
